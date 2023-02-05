@@ -1,0 +1,163 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Orbitron-VariableFont_wght.ttf.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/levels/btm.gd" type="Script" id=2]
+[ext_resource path="res://src/levels/minimenu.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.964706, 0.921569, 0.458824, 0.490196 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.964706, 0.921569, 0.458824, 0.686275 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.964706, 0.921569, 0.458824, 0.392157 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="minimenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 256, 140 )
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.588235, 0.560784, 0.278431, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_constants/margin_right = 200
+custom_constants/margin_left = 200
+custom_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+margin_left = 200.0
+margin_right = 824.0
+margin_bottom = 570.0
+custom_constants/separation = 30
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_right = 624.0
+margin_bottom = 170.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "game paused"
+align = 1
+valign = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_top = 200.0
+margin_right = 624.0
+margin_bottom = 370.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 25
+
+[node name="resume" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 299.0
+margin_bottom = 170.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="resumeButton" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer2/resume"]
+margin_right = 299.0
+margin_bottom = 170.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 0.686275 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "resume"
+
+[node name="options" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 324.0
+margin_right = 624.0
+margin_bottom = 170.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="optionsButton" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer2/options"]
+margin_right = 300.0
+margin_bottom = 170.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 0.686275 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "options"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_top = 400.0
+margin_right = 624.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 25
+
+[node name="levelselect" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 299.0
+margin_bottom = 170.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="levelselectButton" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/levelselect"]
+margin_right = 299.0
+margin_bottom = 170.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 0.686275 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "level select"
+
+[node name="btm" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 324.0
+margin_right = 624.0
+margin_bottom = 170.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+
+[node name="btmButton" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/btm"]
+margin_right = 300.0
+margin_bottom = 170.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 0.686275 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "back to menu"
+
+[connection signal="button_up" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer2/options/optionsButton" to="." method="_on_optionsButton_button_up"]
+[connection signal="button_up" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/levelselect/levelselectButton" to="." method="_on_levelselectButton_button_up"]
+[connection signal="button_up" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/btm/btmButton" to="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/btm" method="_on_btmButton_button_up"]
