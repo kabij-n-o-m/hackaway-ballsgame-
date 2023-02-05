@@ -1,0 +1,109 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Orbitron-VariableFont_wght.ttf.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/other/box.exr" type="Texture" id=2]
+[ext_resource path="res://assets/actors/yellowcircle.exr" type="Texture" id=3]
+[ext_resource path="res://assets/actors/whitecircle.exr" type="Texture" id=4]
+[ext_resource path="res://src/minigameintro.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.964706, 0.921569, 0.458824, 0.490196 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.964706, 0.921569, 0.458824, 0.686275 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.964706, 0.921569, 0.458824, 0.392157 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="minigameintro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -666, -111 )
+script = ExtResource( 5 )
+
+[node name="dialog" type="Sprite" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="dialog"]
+margin_right = 555.0
+margin_bottom = 557.0
+texture = ExtResource( 2 )
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="dialog"]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 512.0
+margin_bottom = 514.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "there are white and blue balls.
+
+
+
+
+
+
+
+click on the balls to make them turn the opposite color. the balls next to them also change colour
+
+
+turn all of the balls white to clear the level!"
+
+[node name="TextureRect" type="TextureRect" parent="dialog/RichTextLabel"]
+margin_left = 68.0
+margin_top = 59.0
+margin_right = 234.0
+margin_bottom = 201.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="dialog/RichTextLabel"]
+margin_left = 266.0
+margin_top = 61.0
+margin_right = 415.0
+margin_bottom = 205.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 5
+
+[node name="resume" type="MarginContainer" parent="dialog"]
+margin_left = 405.0
+margin_top = 478.0
+margin_right = 509.0
+margin_bottom = 522.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="resumeButton" type="Button" parent="dialog/resume"]
+margin_right = 104.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 1, 1, 1, 0.686275 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "close"
+
+[connection signal="button_up" from="dialog/resume/resumeButton" to="." method="_on_resumeButton_button_up"]

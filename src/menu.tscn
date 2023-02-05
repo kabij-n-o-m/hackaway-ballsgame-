@@ -1,0 +1,174 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Orbitron-VariableFont_wght.ttf.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/menu.gd" type="Script" id=2]
+[ext_resource path="res://src/levels/level 1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/options.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/global.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+outline_size = 2
+outline_color = Color( 0.211765, 0.443137, 0.772549, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 0.490196 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 0.686275 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 0.392157 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="menu" type="Control"]
+script = ExtResource( 2 )
+levelOneScene = ExtResource( 3 )
+optionsMenu = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1022.0
+margin_bottom = 604.0
+color = Color( 0.964706, 0.921569, 0.458824, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+margin_right = 1022.0
+margin_bottom = 604.0
+custom_constants/margin_right = 200
+custom_constants/margin_left = 200
+custom_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+margin_left = 200.0
+margin_right = 822.0
+margin_bottom = 574.0
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_right = 622.0
+margin_bottom = 234.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+custom_colors/font_color = Color( 0.281525, 0.8017, 0.960938, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "balls."
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_top = 238.0
+margin_right = 622.0
+margin_bottom = 574.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_right = 622.0
+margin_bottom = 76.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 50
+custom_constants/margin_left = 50
+
+[node name="newgamebutton" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
+margin_left = 50.0
+margin_right = 572.0
+margin_bottom = 76.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "new game"
+
+[node name="MarginContainer4" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 86.0
+margin_right = 622.0
+margin_bottom = 163.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 50
+custom_constants/margin_left = 50
+
+[node name="levelselectbutton" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4"]
+margin_left = 50.0
+margin_right = 572.0
+margin_bottom = 77.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "level select"
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 173.0
+margin_right = 622.0
+margin_bottom = 249.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 50
+custom_constants/margin_left = 50
+
+[node name="optionsbutton" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
+margin_left = 50.0
+margin_right = 572.0
+margin_bottom = 76.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "options"
+
+[node name="MarginContainer3" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 259.0
+margin_right = 622.0
+margin_bottom = 336.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 50
+custom_constants/margin_left = 50
+
+[node name="quitbutton" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3"]
+margin_left = 50.0
+margin_right = 572.0
+margin_bottom = 77.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "quit"
+
+[node name="global" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[connection signal="button_up" from="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/newgamebutton" to="." method="_on_newgamebutton_button_up"]
+[connection signal="button_up" from="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4/levelselectbutton" to="." method="_on_levelselectbutton_button_up"]
+[connection signal="button_up" from="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/optionsbutton" to="." method="_on_optionsbutton_button_up"]
+[connection signal="button_up" from="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/quitbutton" to="." method="_on_quitbutton_button_up"]
