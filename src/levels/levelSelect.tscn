@@ -1,0 +1,249 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Orbitron-VariableFont_wght.ttf.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/levels/levelSelect.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+outline_size = 2
+outline_color = Color( 0.211765, 0.443137, 0.772549, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.964706, 0.921569, 0.458824, 0.490196 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.964706, 0.921569, 0.458824, 0.686275 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.964706, 0.921569, 0.458824, 0.392157 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="levelSelect" type="Control"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.588235, 0.560784, 0.278431, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_constants/margin_right = 200
+custom_constants/margin_left = 200
+custom_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+margin_left = 200.0
+margin_right = 824.0
+margin_bottom = 570.0
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_right = 624.0
+margin_bottom = 233.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+custom_colors/font_color = Color( 0.281525, 0.8017, 0.960938, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "levels"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="GridContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_top = 237.0
+margin_right = 624.0
+margin_bottom = 570.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 30
+custom_constants/hseparation = 30
+columns = 4
+
+[node name="lv1" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_right = 134.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="lv1Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/lv1"]
+margin_right = 134.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 0.686275 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "1"
+
+[node name="lv2" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_left = 164.0
+margin_right = 298.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="lv2Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/lv2"]
+margin_right = 134.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 0.686275 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "temp 2"
+
+[node name="lv3" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_left = 328.0
+margin_right = 461.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="lv3Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/lv3"]
+margin_right = 133.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 0.686275 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "temp 3"
+
+[node name="lv4" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_left = 491.0
+margin_right = 624.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="lv4Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/lv4"]
+margin_right = 133.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 0.686275 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "temp 4"
+
+[node name="lv5" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 182.0
+margin_right = 134.0
+margin_bottom = 333.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="lv5Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/lv5"]
+margin_right = 134.0
+margin_bottom = 151.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 0.686275 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "temp 5"
+
+[node name="lv6" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_left = 164.0
+margin_top = 182.0
+margin_right = 298.0
+margin_bottom = 333.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="lv6Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/lv6"]
+margin_right = 134.0
+margin_bottom = 151.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 0.686275 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "temp 6"
+
+[node name="lv7" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_left = 328.0
+margin_top = 182.0
+margin_right = 461.0
+margin_bottom = 333.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="lv7Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/lv7"]
+margin_right = 133.0
+margin_bottom = 151.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 0.686275 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "temp 7"
+
+[node name="lv8" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_left = 491.0
+margin_top = 182.0
+margin_right = 624.0
+margin_bottom = 333.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="lv8Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/lv8"]
+margin_right = 133.0
+margin_bottom = 151.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 0.686275 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "temp 8"
+
+[node name="backtomenuButton" type="Button" parent="ColorRect"]
+margin_left = 64.0
+margin_top = 56.0
+margin_right = 213.0
+margin_bottom = 129.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 0.686275 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "menu"
+icon_align = 1
+
+[connection signal="button_up" from="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/lv1/lv1Button" to="." method="_on_lv1Button_button_up"]
+[connection signal="button_up" from="ColorRect/backtomenuButton" to="." method="_on_backtomenuButton_button_up"]

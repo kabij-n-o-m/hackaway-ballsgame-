@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/actors/player.exr" type="Texture" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+[node name="player" type="KinematicBody2D"]
+position = Vector2( -26, -30 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 25, 29 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+shape = SubResource( 1 )
+
+[node name="player" type="Sprite" parent="."]
+position = Vector2( 26, 1.52588e-05 )
+scale = Vector2( 1.52266, 1.52266 )
+texture = ExtResource( 1 )
